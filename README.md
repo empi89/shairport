@@ -1,28 +1,23 @@
-# jbor/shairport
-
-This is my first attempt to make a useful Docker image out of Shairport. 
-In it's current state it's pretty basic and unsafe.
-Please notice that it's very basic, but it works.
+# empi89/shairport
+Shairport container from jbor/shairport customized to run on a Raspberry PI 2. See original repo for more information. You may use hypriot (http://blog.hypriot.com) to run Docker on RPi.
 
 ### Requirements
-* phusion/baseimage (or Ubuntu)
+* armelbuild/debian:jessie
 * Alsa sound enabled on host
 
 ### Build
 ```sh
-docker build -t jbor/shairport .
+docker build -t empi89/shairport .
 ```
 
 ### Run
 ```sh
-docker run --name shairport -v /dev/snd:/dev/snd:rw --net="host" --privileged -d jbor/shairport
+./run-with-docker
 ```
 
-### Todo's
-Things that need to be done:
-* Isolate the image, so --net="host" is not needed
-* Get the sound device to work without running in --privileged mode
-* Making it smaller
+### Credits
+* This is forked from  jbor/shairport
+* Inspired by the RPi Dockerfile from djmaze
 
 ### Docker Repository
-https://registry.hub.docker.com/u/jbor/shairport/
+https://registry.hub.docker.com/u/empi89/shairport/

@@ -1,0 +1,8 @@
+#!/bin/bash
+NAME="myShairportRpi"
+
+for DEV in $(find /dev/snd -type c); do
+  DEVICE_ARGS="$DEVICE_ARGS --device=$DEV:$DEV"
+done
+
+exec docker run --name $NAME -it -d $DEVICE_ARGS --net="host" -e NAME=$NAME empi89/shairport $*

@@ -1,7 +1,4 @@
-FROM phusion/baseimage:latest
-MAINTAINER JBOR
-
-ENV NAME Roodborstje
+FROM armelbuild/debian:jessie
 
 COPY airplay.sh /usr/bin/
 
